@@ -1,4 +1,5 @@
 import gulp from 'gulp';
+import phPages from 'gulp-gh-pages';
 import plumber from 'gulp-plumber';
 import less from 'gulp-less';
 import postcss from 'gulp-postcss';
@@ -164,12 +165,14 @@ export const build = gulp.series(
   ),
 );
 
+const deploy = () => gulp.src('./build/**/*').pipe(ghPages());
 //Default
 
 export default gulp.series(
   clean,
   copy,
   copyImages,
+  deploy,
   gulp.parallel(
     styles,
     html,

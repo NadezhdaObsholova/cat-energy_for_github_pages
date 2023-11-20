@@ -19,6 +19,7 @@
     "gulp-svgo": "^2.2.1",
     "gulp-svgstore": "^9.0.0",
     "gulp-terser": "^2.1.0",
+    "gulp-gh-pages": "^0.5.4",
     "postcss": "8.3.11",
     "postcss-csso": "^6.0.1",
     "rename": "^1.0.4",
@@ -30,7 +31,8 @@
     "stylelint": "stylelint \"source/less/**/*.less\" --syntax less",
     "lint": "npm run editorconfig && npm run stylelint",
     "build": "gulp build",
-    "start": "gulp"
+    "start": "gulp",
+    "deploy": "gulp build && gulp deploy"
   },
   "browserslist": [
     "last 2 versions",
